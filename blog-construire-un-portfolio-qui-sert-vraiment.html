@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soh Ben Kevine — Développeur Full Stack Junior</title>
+    <meta name="description" content="Portfolio de Soh Ben Kevine, développeur full stack junior et étudiant en Licence 3 MIAGE à l'UFHB : projets, expérience, compétences et blog.">
+    <meta property="og:title" content="Soh Ben Kevine — Développeur Full Stack Junior">
+    <meta property="og:description" content="Projets, expérience et compétences de Soh Ben Kevine, développeur full stack junior.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="app.css" /><link rel="modulepreload" as="script" href="app.js" /><link rel="stylesheet" href="app.css" /><script type="module" src="app.js"></script></head>
+<body class="bg-dark-bg text-text-primary antialiased">
+    <!-- Background effects -->
+    <div class="fixed inset-0 -z-10 bg-grid opacity-30"></div>
+    <div class="fixed inset-0 -z-10 bg-radial-neon"></div>
+
+    <!-- Neon universe background network (canvas, behind content) -->
+    <canvas id="neon-canvas" class="neon-universe-bg" aria-hidden="true"></canvas>
+
+    <!-- Atomic / ionic custom cursor (canvas overlay, never blocks interaction) -->
+    <canvas id="atomic-cursor" class="atomic-cursor" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-dark-bg/70 border-b border-dark-border">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index.html#hero" class="flex items-center gap-2 group">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                SB
+            </div>
+            <span class="font-display font-bold text-lg tracking-wider text-gradient">SOH BEN KEVINE</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+            <li><a href="index.html#about" class="nav-link text-text-secondary hover:text-neon-cyan transition">À propos</a></li>
+            <li><a href="index.html#experience" class="nav-link text-text-secondary hover:text-neon-cyan transition">Expérience</a></li>
+            <li><a href="index.html#projects" class="nav-link text-text-secondary hover:text-neon-cyan transition">Projets</a></li>
+            <li><a href="index.html#education" class="nav-link text-text-secondary hover:text-neon-cyan transition">Éducation</a></li>
+            <li><a href="index.html#skills" class="nav-link text-text-secondary hover:text-neon-cyan transition">Compétences</a></li>
+            <li><a href="index.html#blog" class="nav-link text-text-secondary hover:text-neon-cyan transition">Blog</a></li>
+            <li><a href="index.html#contact" class="btn-outline text-sm">Contact</a></li>
+        </ul>
+
+        <!-- Mobile menu button -->
+        <button x-data="{ open: false }" @click="open = !open" class="md:hidden text-neon-cyan p-2">
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div x-data="{ open: false }" x-show="open" class="md:hidden border-t border-dark-border bg-dark-surface/95 backdrop-blur">
+        <ul class="flex flex-col gap-4 p-6">
+            <li><a href="index.html#about" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">À propos</a></li>
+            <li><a href="index.html#experience" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Expérience</a></li>
+            <li><a href="index.html#projects" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Projets</a></li>
+            <li><a href="index.html#education" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Éducation</a></li>
+            <li><a href="index.html#skills" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Compétences</a></li>
+            <li><a href="index.html#blog" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Blog</a></li>
+            <li><a href="index.html#contact" @click="open = false" class="btn-outline w-full justify-center">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Main content -->
+    <main>
+        
+    <article class="pt-32 pb-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="blog.html" class="inline-flex items-center gap-2 text-text-muted hover:text-neon-cyan transition text-sm mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Tous les articles
+            </a>
+
+            <div class="flex items-center gap-3 text-xs text-text-muted mb-4">
+                <span class="badge-violet">4 min de lecture</span>
+                <span>2 June 2026</span>
+            </div>
+
+            <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight mb-6">
+                <span class="text-gradient">Construire un portfolio qui sert vraiment</span>
+            </h1>
+
+            <p class="text-xl text-text-secondary mb-10 leading-relaxed border-l-2 border-neon-violet/50 pl-4">
+                Un portfolio n&#039;est pas une liste de projets. C&#039;est une histoire cohérente qui montre votre capacité à résoudre des problèmes réels — voici ce que j&#039;ai appris en construisant le mien.
+            </p>
+
+            <div class="prose-neon">
+                <p>Quand on est étudiant en licence et qu'on commence à chercher un stage, tout le monde vous dit la même chose : « il faut un portfolio ». Alors on ouvre un template, on liste ses projets de TP, on met un titre en gradient néon, et on envoie. Résultat ? Un site qui ne distingue pas grand-chose d'un autre.</p>
+
+<h2>Le piège du portfolio-vitrine</h2>
+<p>Le portfolio-vitrine, c'est celui qui énumère. « Projet 1 : site e-commerce. Projet 2 : application météo. Projet 3 : todo list en React. » Le visiteur passe trois secondes dessus et ressort. Pourquoi ? Parce qu'il n'y a <em>aucune histoire</em>. On ne sait pas quel problème le projet résolvait, ni ce que vous avez personnellement construit, ni ce que vous avez appris.</p>
+<p>Un bon portfolio répond à trois questions, dans cet ordre :</p>
+<ul>
+<li><strong>Quel problème réel ce projet résout-il ?</strong></li>
+<li><strong>Quelle a été votre part technique ?</strong> (pas celle de l'équipe, la vôtre)</li>
+<li><strong>Qu'avez-vous appris, y compris en échouant ?</strong></li>
+</ul>
+
+<h2>Choisir ses projets</h2>
+<p>Quand j'ai commencé le mien, je voulais tout mettre. Mes scripts Python de scraping, mes TP de fac, un vieux projet de quiz, une app mobile en cours… Mauvaise idée. Un portfolio n'est pas un GitHub : il doit raconter une trajectoire, pas être un dépôt d'archives.</p>
+<p>J'ai gardé cinq projets. Pas plus. Chacun illustre une compétence différente : <strong>UNFLOW</strong> pour le mobile (React Native), <strong>ilawers</strong> pour l'IA appliquée au juridique, une <strong>API REST en Flask</strong> pour le backend propre, un <strong>quiz web</strong> pour la logique frontend pure, et le <strong>portfolio lui-même</strong> comme démonstration de capacité front/design.</p>
+
+<h2>Montrer la sueur, pas seulement le résultat</h2>
+<p>Le morceau que j'ai le plus travaillé, c'est la description. Pas le design. Pour chaque projet, je commence par le contexte (en une phrase), puis le problème technique, puis ce que j'ai choisi de faire et pourquoi. Si j'ai cassé quelque chose en route, je le dis. Les recruteurs techniques adorent ça : ça prouve que vous avez réellement mis les mains dans le code.</p>
+<p>Exemple concret : sur l'API Flask, j'ai initialement tout mis dans un seul fichier <code>app.py</code>. Ça marchait. Puis j'ai voulu ajouter une authentification — et tout est devenu illisible. J'ai refactorisé en blueprint, c'est-à-dire que j'ai coupé le code en modules. C'est ce genre de moment que vous devez raconter. Pas « j'ai fait une API REST ».</p>
+
+<h2>Le design doit servir, pas briller</h2>
+<p>Mon portfolio est néon, sombre, avec un curseur en canvas qui orbite. C'est joli. Mais si demain j'enlevais toutes les animations, le contenu devrait continuer à se tenir. Le design est la couche supplémentaire qui fait dire « ce mec soigne le détail », pas celle qui cache un vide de contenu.</p>
+<p>Si vous hésitez entre un template sexy et un site plat mais avec de vraies descriptions de projets : prenez le second. Tous les recruteurs vous diront la même chose.</p>
+
+<h2>Ce que je referais différemment</h2>
+<p>Trois choses. D'abord, <strong>écrire les descriptions avant de coder le site</strong>. On se rend compte très vite que certains projets ne méritent pas d'y figurer. Ensuite, <strong>mesurer l'impact</strong> — combien d'utilisateurs, quel gain de temps, même approximatif. Enfin, <strong>garder une version courte</strong> de chaque projet pour la lecture rapide, et une version longue accessible au clic. Je n'ai pas encore fait cette dernière, c'est ma prochaine itération.</p>
+
+<p>En résumé : un portfolio n'est pas une liste, c'est une trajectoire. Choisissez peu de projets, expliquez-les honnêtement, et le design suivra.</p>
+            </div>
+
+                            <div class="mt-16 pt-10 border-t border-dark-border">
+                    <h2 class="font-display text-sm uppercase tracking-widest text-text-muted mb-6">À lire aussi</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <a href="blog-docker-pour-les-developpeurs-juniors.html" class="card-neon p-5 group block">
+                                <div class="text-xs text-text-muted mb-2">5 min</div>
+                                <h3 class="font-display font-bold text-text-primary group-hover:text-neon-cyan transition">Docker pour les développeurs juniors : ce que j&#039;aurais aimé savoir</h3>
+                                <p class="text-text-secondary text-sm mt-2 line-clamp-2">Docker m&#039;a fait peur pendant six mois. Voici comment j&#039;ai fini par l&#039;utiliser vraiment — sans devenir devops, juste pour arrêter de casser mon environnement.</p>
+                            </a>
+                                                    <a href="blog-laravel-react-native-api-rest.html" class="card-neon p-5 group block">
+                                <div class="text-xs text-text-muted mb-2">6 min</div>
+                                <h3 class="font-display font-bold text-text-primary group-hover:text-neon-cyan transition">Laravel + React Native : brancher un frontend mobile sur une API REST</h3>
+                                <p class="text-text-secondary text-sm mt-2 line-clamp-2">Comment faire dialoguer une API Laravel et une app React Native sans s&#039;emmêler les pinceaux : CORS, tokens, gestion d&#039;erreur et pièges classiques.</p>
+                            </a>
+                                            </div>
+                </div>
+                    </div>
+    </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-border bg-dark-surface/50 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                    A
+                </div>
+                <div>
+                    <p class="font-display font-bold text-lg text-gradient">PORTFOLIO NEON</p>
+                    <p class="text-xs text-text-muted">© 2026 — Tous droits réservés</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/ke2007-st" target="_blank" rel="noopener" class="text-text-secondary hover:text-neon-cyan transition" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+                <a href="mailto:sohben342@gmail.com" class="text-text-secondary hover:text-neon-cyan transition" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soh Ben Kevine — Développeur Full Stack Junior</title>
+    <meta name="description" content="Portfolio de Soh Ben Kevine, développeur full stack junior et étudiant en Licence 3 MIAGE à l'UFHB : projets, expérience, compétences et blog.">
+    <meta property="og:title" content="Soh Ben Kevine — Développeur Full Stack Junior">
+    <meta property="og:description" content="Projets, expérience et compétences de Soh Ben Kevine, développeur full stack junior.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="app.css" /><link rel="modulepreload" as="script" href="app.js" /><link rel="stylesheet" href="app.css" /><script type="module" src="app.js"></script></head>
+<body class="bg-dark-bg text-text-primary antialiased">
+    <!-- Background effects -->
+    <div class="fixed inset-0 -z-10 bg-grid opacity-30"></div>
+    <div class="fixed inset-0 -z-10 bg-radial-neon"></div>
+
+    <!-- Neon universe background network (canvas, behind content) -->
+    <canvas id="neon-canvas" class="neon-universe-bg" aria-hidden="true"></canvas>
+
+    <!-- Atomic / ionic custom cursor (canvas overlay, never blocks interaction) -->
+    <canvas id="atomic-cursor" class="atomic-cursor" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-dark-bg/70 border-b border-dark-border">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index.html#hero" class="flex items-center gap-2 group">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                SB
+            </div>
+            <span class="font-display font-bold text-lg tracking-wider text-gradient">SOH BEN KEVINE</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+            <li><a href="index.html#about" class="nav-link text-text-secondary hover:text-neon-cyan transition">À propos</a></li>
+            <li><a href="index.html#experience" class="nav-link text-text-secondary hover:text-neon-cyan transition">Expérience</a></li>
+            <li><a href="index.html#projects" class="nav-link text-text-secondary hover:text-neon-cyan transition">Projets</a></li>
+            <li><a href="index.html#education" class="nav-link text-text-secondary hover:text-neon-cyan transition">Éducation</a></li>
+            <li><a href="index.html#skills" class="nav-link text-text-secondary hover:text-neon-cyan transition">Compétences</a></li>
+            <li><a href="index.html#blog" class="nav-link text-text-secondary hover:text-neon-cyan transition">Blog</a></li>
+            <li><a href="index.html#contact" class="btn-outline text-sm">Contact</a></li>
+        </ul>
+
+        <!-- Mobile menu button -->
+        <button x-data="{ open: false }" @click="open = !open" class="md:hidden text-neon-cyan p-2">
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div x-data="{ open: false }" x-show="open" class="md:hidden border-t border-dark-border bg-dark-surface/95 backdrop-blur">
+        <ul class="flex flex-col gap-4 p-6">
+            <li><a href="index.html#about" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">À propos</a></li>
+            <li><a href="index.html#experience" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Expérience</a></li>
+            <li><a href="index.html#projects" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Projets</a></li>
+            <li><a href="index.html#education" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Éducation</a></li>
+            <li><a href="index.html#skills" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Compétences</a></li>
+            <li><a href="index.html#blog" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Blog</a></li>
+            <li><a href="index.html#contact" @click="open = false" class="btn-outline w-full justify-center">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Main content -->
+    <main>
+        
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <a href="index.html" class="inline-flex items-center gap-2 text-text-muted hover:text-neon-cyan transition text-sm mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Retour à l'accueil
+            </a>
+
+            <h1 data-reveal class="section-title text-4xl md:text-5xl mb-4">
+                <span class="text-gradient">Blog</span>
+            </h1>
+            <p data-reveal class="text-text-secondary mb-12 max-w-2xl">
+                Retours d'expérience, apprentissages et reflexions sur le développement — du projet étudiant au déploiement en production.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <article data-reveal class="card-neon p-6 group flex flex-col">
+                        <div class="flex items-center gap-3 text-xs text-text-muted mb-3">
+                            <span class="badge-violet">4 min</span>
+                            <span>Jun 2, 2026</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-text-primary group-hover:text-neon-cyan transition">
+                            Construire un portfolio qui sert vraiment
+                        </h2>
+                        <p class="text-text-secondary text-sm mt-3 flex-1">Un portfolio n&#039;est pas une liste de projets. C&#039;est une histoire cohérente qui montre votre capacité à résoudre des problèmes réels — voici ce que j&#039;ai appris en construisant le mien.</p>
+                        <a href="blog-construire-un-portfolio-qui-sert-vraiment.html" class="inline-flex items-center gap-1 text-neon-cyan text-sm mt-4 hover:gap-2 transition-all self-start">
+                            Lire l'article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+                                    <article data-reveal class="card-neon p-6 group flex flex-col">
+                        <div class="flex items-center gap-3 text-xs text-text-muted mb-3">
+                            <span class="badge-violet">5 min</span>
+                            <span>May 15, 2026</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-text-primary group-hover:text-neon-cyan transition">
+                            Docker pour les développeurs juniors : ce que j&#039;aurais aimé savoir
+                        </h2>
+                        <p class="text-text-secondary text-sm mt-3 flex-1">Docker m&#039;a fait peur pendant six mois. Voici comment j&#039;ai fini par l&#039;utiliser vraiment — sans devenir devops, juste pour arrêter de casser mon environnement.</p>
+                        <a href="blog-docker-pour-les-developpeurs-juniors.html" class="inline-flex items-center gap-1 text-neon-cyan text-sm mt-4 hover:gap-2 transition-all self-start">
+                            Lire l'article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+                                    <article data-reveal class="card-neon p-6 group flex flex-col">
+                        <div class="flex items-center gap-3 text-xs text-text-muted mb-3">
+                            <span class="badge-violet">6 min</span>
+                            <span>Apr 8, 2026</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-text-primary group-hover:text-neon-cyan transition">
+                            Laravel + React Native : brancher un frontend mobile sur une API REST
+                        </h2>
+                        <p class="text-text-secondary text-sm mt-3 flex-1">Comment faire dialoguer une API Laravel et une app React Native sans s&#039;emmêler les pinceaux : CORS, tokens, gestion d&#039;erreur et pièges classiques.</p>
+                        <a href="blog-laravel-react-native-api-rest.html" class="inline-flex items-center gap-1 text-neon-cyan text-sm mt-4 hover:gap-2 transition-all self-start">
+                            Lire l'article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-border bg-dark-surface/50 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                    A
+                </div>
+                <div>
+                    <p class="font-display font-bold text-lg text-gradient">PORTFOLIO NEON</p>
+                    <p class="text-xs text-text-muted">© 2026 — Tous droits réservés</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/ke2007-st" target="_blank" rel="noopener" class="text-text-secondary hover:text-neon-cyan transition" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+                <a href="mailto:sohben342@gmail.com" class="text-text-secondary hover:text-neon-cyan transition" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
