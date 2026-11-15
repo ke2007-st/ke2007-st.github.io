@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soh Ben Kevine — Junior Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Soh Ben Kevine, junior full-stack developer and 3rd-year MIAGE student at UFHB: projects, experience, skills and blog.">
+    <meta property="og:title" content="Soh Ben Kevine — Junior Full Stack Developer">
+    <meta property="og:description" content="Projects, experience and skills of Soh Ben Kevine, junior full-stack developer.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="app.css" /><link rel="modulepreload" as="script" href="app.js" /><link rel="stylesheet" href="app.css" /><script type="module" src="app.js"></script></head>
+<body class="bg-dark-bg text-text-primary antialiased">
+    <!-- Background effects -->
+    <div class="fixed inset-0 -z-10 bg-grid opacity-30"></div>
+    <div class="fixed inset-0 -z-10 bg-radial-neon"></div>
+
+    <!-- Neon universe background network (canvas, behind content) -->
+    <canvas id="neon-canvas" class="neon-universe-bg" aria-hidden="true"></canvas>
+
+    <!-- Atomic / ionic custom cursor (canvas overlay, never blocks interaction) -->
+    <canvas id="atomic-cursor" class="atomic-cursor" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-dark-bg/70 border-b border-dark-border">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index-en.html#hero" class="flex items-center gap-2 group">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                SB
+            </div>
+            <span class="font-display font-bold text-lg tracking-wider text-gradient">SOH BEN KEVINE</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+            <li><a href="index-en.html#about" class="nav-link text-text-secondary hover:text-neon-cyan transition">About</a></li>
+            <li><a href="index-en.html#experience" class="nav-link text-text-secondary hover:text-neon-cyan transition">Experience</a></li>
+            <li><a href="index-en.html#projects" class="nav-link text-text-secondary hover:text-neon-cyan transition">Projects</a></li>
+            <li><a href="index-en.html#education" class="nav-link text-text-secondary hover:text-neon-cyan transition">Education</a></li>
+            <li><a href="index-en.html#skills" class="nav-link text-text-secondary hover:text-neon-cyan transition">Skills</a></li>
+            <li><a href="index-en.html#blog" class="nav-link text-text-secondary hover:text-neon-cyan transition">Blog</a></li>
+            <li><a href="index-en.html#contact" class="btn-outline text-sm">Contact</a></li>
+            <li><a href="blog-docker-pour-les-developpeurs-juniors.html" title="Version française" class="text-xs font-display font-bold tracking-wider px-3 py-2 rounded-lg border border-dark-border text-text-secondary hover:text-neon-cyan hover:border-neon-cyan transition">FR</a></li>
+        </ul>
+
+        <!-- Mobile menu button -->
+        <button x-data="{ open: false }" @click="open = !open" class="md:hidden text-neon-cyan p-2">
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div x-data="{ open: false }" x-show="open" class="md:hidden border-t border-dark-border bg-dark-surface/95 backdrop-blur">
+        <ul class="flex flex-col gap-4 p-6">
+            <li><a href="index-en.html#about" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">About</a></li>
+            <li><a href="index-en.html#experience" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Experience</a></li>
+            <li><a href="index-en.html#projects" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Projects</a></li>
+            <li><a href="index-en.html#education" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Education</a></li>
+            <li><a href="index-en.html#skills" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Skills</a></li>
+            <li><a href="index-en.html#blog" @click="open = false" class="block text-text-secondary hover:text-neon-cyan">Blog</a></li>
+            <li><a href="index-en.html#contact" @click="open = false" class="btn-outline w-full justify-center">Contact</a></li>
+            <li class="pt-2"><a href="blog-docker-pour-les-developpeurs-juniors.html" title="Version française" class="text-xs font-display font-bold tracking-wider px-3 py-2 rounded-lg border border-dark-border text-text-secondary hover:text-neon-cyan hover:border-neon-cyan transition">FR</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Main content -->
+    <main>
+        
+    <article class="pt-32 pb-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="blog-en.html" class="inline-flex items-center gap-2 text-text-muted hover:text-neon-cyan transition text-sm mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                All articles
+            </a>
+
+            <div class="flex items-center gap-3 text-xs text-text-muted mb-4">
+                <span class="badge-violet">5 min read</span>
+                <span>May 15, 2026</span>
+            </div>
+
+            <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight mb-6">
+                <span class="text-gradient">Docker for junior developers: what I wish I had known</span>
+            </h1>
+
+            <p class="text-xl text-text-secondary mb-10 leading-relaxed border-l-2 border-neon-violet/50 pl-4">
+                Docker scared me for six months. Here is how I finally started using it for real, without becoming a DevOps engineer, just to stop breaking my environment. (Article in French.)
+            </p>
+
+            <div class="prose-neon">
+                <p>La première fois qu'on m'a parlé de Docker, j'ai fait ce que font beaucoup d'étudiants : j'ai ouvert la doc, j'ai vu des mots comme « cgroups », « namespaces », « union filesystem » — et j'ai refermé l'onglet. Six mois plus tard, j'ai croisé Docker dans un projet pro et je n'ai plus pu faire semblant. Voici le récit de ce passage, et les quelques principes qui m'auraient fait gagner du temps.</p>
+
+<h2>Pourquoi on en a besoin, concrètement</h2>
+<p>Le problème que Docker résout, ce n'est pas « déployer dans le cloud ». C'est <strong>« ça marche sur ma machine »</strong>. Vous installez PostgreSQL 16 chez vous, vous codez contre, vous poussez sur GitHub. Votre collègue tire le code, installe PostgreSQL 14, et rien ne marche. Docker coupe court à ça : vous décrivez votre environnement dans un fichier, et tout le monde obtient la même chose.</p>
+<p>Pour un junior, le bénéfice est immédiat. Vous n'installez plus rien sur votre machine hôte. Vous ne corruptionnez plus votre Windows avec cinq versions de Python. Vous lancez un <code>docker compose up</code>, et la base, l'API, le frontend tournent.</p>
+
+<h2>Les trois commandes qui changent tout</h2>
+<p>Je m'étais noyé dans la doc. En réalité, pour démarrer, trois commandes suffisent :</p>
+<pre><code>docker build -t mon-app .            # construire l'image
+docker run -p 8080:80 mon-app         # lancer un conteneur
+docker compose up                     # lancer tout un stack</code></pre>
+<p>Avec ça, vous êtes opérationnel. Le reste (volumes, networks, multi-stage builds) vient quand vous en avez besoin — pas avant.</p>
+
+<h2>L'erreur classique du débutant</h2>
+<p>La première image que j'ai écrite faisait 1,4 Go. J'avais pris une image de base Ubuntu complète, j'avais installé Python avec apt, puis mes dépendances, puis mon code. Ça marchait. C'était monstrueux.</p>
+<p>La règle : <strong>partez d'une image alpine</strong>. Pour Python, <code>python:3.12-slim</code> ou <code>python:3.12-alpine</code>. Pour Node, <code>node:20-alpine</code>. Vous passez de 1,4 Go à 120 Mo. Et vous réduisez la surface d'attaque en production, ce que les devs seniors vous reprocheront toujours de ne pas faire.</p>
+
+<h2>Le <code>Dockerfile</code> minimal que j'utilise tout le temps</h2>
+<pre><code>FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]</code></pre>
+<p>Rien de sorcier. Et c'est <em>exactement</em> ce qu'il faut pour 80% des projets étudiants. Les 20% restants (multi-stage, cache, build args) sont des optimisations, pas des prérequis.</p>
+
+<h2><code>docker compose</code> : le moment déclic</h2>
+<p>Le déclic, c'est quand j'ai compris que <code>docker compose</code> n'était pas une variante de Docker mais <strong>un orchestrateur de plusieurs conteneurs</strong>. Vous décrivez, dans un fichier YAML, votre API + votre base + votre frontend, et un seul <code>up</code> lance tout, dans le bon ordre, avec les bonnes variables d'environnement.</p>
+<pre><code>services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://user:pass@db:5432/app
+    depends_on:
+      - db
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:</code></pre>
+<p>C'est ce fichier qui m'a fait passer de « j'installe des trucs » à « je décris mon système ». Et ça, c'est un vrai changement de mentalité — pas seulement une nouvelle commande.</p>
+
+<h2>Le piège caché : les volumes</h2>
+<p>On ne vous le dit pas tout de suite, mais si vous ne mettez pas de volume sur votre base, <strong>vous perdez toutes vos données à chaque <code>down</code></strong>. J'ai appris ça en perdant trois jours de données de test. Depuis, la ligne <code>volumes: - db-data:/var/lib/postgresql/data</code> est la première que j'ajoute. Toujours.</p>
+
+<h2>Bref</h2>
+<p>Docker n'est pas un sujet de devops. C'est un outil de propreté. Pour un junior, l'apprendre tôt, c'est arrêter de pourrir sa machine et commencer à livrer un environnement reproductible. Les concepts avancés viendront. Commencez par les trois commandes, et vous en saurez déjà plus que la moyenne des L2.</p>
+            </div>
+
+                            <div class="mt-16 pt-10 border-t border-dark-border">
+                    <h2 class="font-display text-sm uppercase tracking-widest text-text-muted mb-6">Read next</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <a href="blog-construire-un-portfolio-qui-sert-vraiment-en.html" class="card-neon p-5 group block">
+                                <div class="text-xs text-text-muted mb-2">4 min</div>
+                                <h3 class="font-display font-bold text-text-primary group-hover:text-neon-cyan transition">Building a portfolio that actually works</h3>
+                                <p class="text-text-secondary text-sm mt-2 line-clamp-2">A portfolio is not a list of projects. It is a coherent story that shows you can solve real problems. Here is what I learned building mine. (Article in French.)</p>
+                            </a>
+                                                    <a href="blog-laravel-react-native-api-rest-en.html" class="card-neon p-5 group block">
+                                <div class="text-xs text-text-muted mb-2">6 min</div>
+                                <h3 class="font-display font-bold text-text-primary group-hover:text-neon-cyan transition">Laravel + React Native: connecting a mobile frontend to a REST API</h3>
+                                <p class="text-text-secondary text-sm mt-2 line-clamp-2">How to make a Laravel API and a React Native app talk to each other cleanly: CORS, tokens, error handling and common pitfalls. (Article in French.)</p>
+                            </a>
+                                            </div>
+                </div>
+                    </div>
+    </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-border bg-dark-surface/50 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-violet animate-gradient flex items-center justify-center font-display font-bold text-dark-bg">
+                    SB
+                </div>
+                <div>
+                    <p class="font-display font-bold text-lg text-gradient">SOH BEN KEVINE</p>
+                    <p class="text-xs text-text-muted">© 2026 — All rights reserved</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/ke2007-st" target="_blank" rel="noopener" class="text-text-secondary hover:text-neon-cyan transition" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+                <a href="mailto:sohben342@gmail.com" class="text-text-secondary hover:text-neon-cyan transition" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
